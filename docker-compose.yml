@@ -8,10 +8,9 @@ services:
       dockerfile: Dockerfile
       args:
         PHP_VERSION: 8.1.18
-        PORT: ${PORT_INT}
     volumes:
       - ./htdocs:/var/www/html
     ports:
-      - 127.0.0.1:${PORT}:${PORT_INT}
-    entrypoint: php -S 0.0.0.0:${PORT_INT} -t .
+      - 127.0.0.1:${PORT}:8000
+    entrypoint: php -S 0.0.0.0:8000 -t .
     #entrypoint: sleep infinitely
