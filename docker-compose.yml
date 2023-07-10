@@ -7,7 +7,7 @@ services:
       context: "."
       dockerfile: Dockerfile
       args:
-        PHP_VERSION: 8.1.18
+        PHP_VERSION: '${PHP_VERSION:-8.1.18}'
     volumes:
       - ./htdocs:/var/www/html
     ports:
