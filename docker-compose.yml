@@ -2,10 +2,10 @@ version: "3"
 
 services:
   app:
-    image: google85/php-fpm:latest
+    image: google85/php-fpm:${DOCKER_IMAGE_TAG}
     container_name: php-simple
     environment:
-      PHP_VERSION: '${PHP_VERSION}'
+      PORT: '${PORT}'
     volumes:
       - ./htdocs:/var/www/html
     ports:

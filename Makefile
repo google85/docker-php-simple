@@ -6,10 +6,10 @@ help: ## View all make targets
 
 start: ## Start the dev container stack
 	@echo "Starting up dev container..."
-	@echo "Please open http://localhost:${PORT}\n\r"
-	docker compose --project-name 'dev-php-simple' up  --build --force-recreate
+	@echo "Please open http://localhost:${PORT} \r\n\r\n"
+	docker compose --project-name '${DOCKER_CONTAINER_NAME}' up  --build --force-recreate
 
 stop: ## Stop the container stack
 	@echo "Stopping all containers..."
-	docker compose --project-name 'dev-php-simple' stop && \
-	docker compose --project-name 'dev-php-simple' down
+	docker compose --project-name '${DOCKER_CONTAINER_NAME}' stop && \
+	docker compose --project-name '${DOCKER_CONTAINER_NAME}' down
